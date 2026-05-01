@@ -1,0 +1,21 @@
+# Node modules (sabse important)
+node_modules/
+
+# Environment variables (VERY IMPORTANT)
+.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build / dist
+dist/
+build/
+
+# Optional
+coverage/
