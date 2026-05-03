@@ -4,9 +4,19 @@ import cors from "cors";
 dotenv.config();
 
 const app = express();
-app.use(cors());
-app.use(express.json())
 
+app.use(cors({
+  origin: [
+    "https://vedwati2000.github.io/chatboot_frontend/",
+    "https://tranquil-cocada-8513aa.netlify.app"
+  ],
+  methods: ["GET", "POST"],
+  credentials: true
+}));
+
+
+app.use(express.json())
+const PORT = process.env.PORT || 3000;
 const API_KEY = process.env.API_KEY;
 
 app.post("/chat", async (req, res) => {
@@ -33,6 +43,9 @@ app.get("/chat", (req, res) => {
     res.send("Chat API is working");
 })
 
-let PORT = 3000;
+
+
+
+
 
 app.listen(PORT, () => console.log(`Server running on port http://localhost:${PORT}`));
